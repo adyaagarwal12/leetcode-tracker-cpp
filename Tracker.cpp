@@ -72,3 +72,29 @@ void Tracker::loadFromFile()
 
     fin.close();
 }
+void Tracker::searchProblem()
+{
+    string topic;
+
+    cin.ignore();
+
+    cout<<"Enter topic: ";
+
+    getline(cin,topic);
+
+    for(auto p:problems)
+    {
+        if(p.topic==topic)
+        {
+            cout<<p.title<<" | "
+                <<p.topic<<" | "
+                <<p.difficulty<<" | ";
+
+            if(p.solved)
+                cout<<"Solved\n";
+
+            else
+                cout<<"Pending\n";
+        }
+    }
+}
